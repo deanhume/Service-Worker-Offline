@@ -12,7 +12,7 @@ self.addEventListener('install', event => {
     // the actual URL we end up requesting might include a cache-busting parameter.
     fetch(OFFLINE_URL).then(function(response) {
       return caches.open(CURRENT_CACHES.offline).then(function(cache) {
-        console.log('adding offline page to cache', error);
+        console.log('adding offline page to cache');
         return cache.put(OFFLINE_URL, response);
       });
     })
